@@ -1,0 +1,84 @@
+* {
+  font-family: monospace;
+  margin: 0;
+}
+
+.loginMenu {
+  position: relative;
+}
+
+.loginContent {
+  position: absolute;
+  transform: translateX(50vw) translateY(45vh) translateX(-50%) translateY(-60%);
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 3rem;
+  border-radius: 0.5rem;
+  height: 40vh;
+  min-width: 300px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
+}
+
+.loginMenu.active > .loginContent {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(50vw) translateY(45vh) translateX(-50%) translateY(-50%);
+}
+
+.slides {
+  position: relative;
+  height: 100vh;
+}
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.next {
+  position: absolute;
+  top: 50vh;
+  right: 0;
+  transform: translateY(-50%);
+  opacity: 0.5;
+}
+
+.pre {
+  position: absolute;
+  top: 50vh;
+  transform: translateY(-50%);
+  opacity: 0.5;
+}
+
+.navigation {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  display: flex;
+  gap: 1rem;
+  transform: translateX(-50%);
+}
+
+.nav {
+  width: 1rem;
+  height: 1rem;
+  border: 3px solid black;
+  border-radius: 50%;
+}
+
+.nav.active {
+  background-color: black;
+}
